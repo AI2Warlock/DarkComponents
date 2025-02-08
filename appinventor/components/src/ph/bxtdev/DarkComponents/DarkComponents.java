@@ -80,8 +80,8 @@ public class DarkComponents extends AndroidNonvisibleComponent {
     }
 
 
-    private Map<String, Component> mapComponents() throws NoSuchFieldException, IllegalAccessException {
-       Map<String, Component> components = new HashMap<>();
+    private Map<String, AndroidViewComponent> mapComponents() throws NoSuchFieldException, IllegalAccessException {
+       Map<String, AndroidViewComponent> components = new HashMap<>();
        Field componentsField = form.getClass().getField("components$Mnto$Mncreate");
        LList listComponents = (LList) componentsField.get(form);
        for (Object component : listComponents) {
@@ -96,8 +96,8 @@ public class DarkComponents extends AndroidNonvisibleComponent {
       return components;
   }
 
-   private Map<String, Component> mapComponentsRepl() throws NoSuchFieldException, IllegalAccessException {
-    Map<String, Component> components = new HashMap<>();
+   private Map<String, AndroidViewComponent> mapComponentsRepl() throws NoSuchFieldException, IllegalAccessException {
+    Map<String, AndroidViewComponent> components = new HashMap<>();
     Field field = form.getClass().getField("form$Mnenvironment");
     Environment environment = (Environment) field.get(form);
     LocationEnumeration locationEnumeration = environment.enumerateAllLocations();
