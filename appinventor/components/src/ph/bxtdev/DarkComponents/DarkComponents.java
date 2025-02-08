@@ -105,8 +105,8 @@ public class DarkComponents extends AndroidNonvisibleComponent {
       Location location = locationEnumeration.next();
       String componentName = location.getKeySymbol().getName();
       Object value = location.getValue();
-      if (value instanceof Component) {
-        components.put(componentName, (Component) value);
+      if (value instanceof AndroidViewComponent) {
+        components.put(componentName, (AndroidViewComponent) value);
       }
     }
     return components;
