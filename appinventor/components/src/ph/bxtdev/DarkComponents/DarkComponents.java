@@ -15,7 +15,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 @DesignerComponent(
-        version = 1,
+        version = 2,
+        versionName = "1.1",
         description = "Set components to light/dark mode without adjusting view.",
         category = ComponentCategory.EXTENSION,
         nonVisible = true,
@@ -51,10 +52,10 @@ public class DarkComponents extends AndroidNonvisibleComponent {
                for(Map.Entry<String, AndroidViewComponent> entry : components.entrySet()){
                     AndroidViewComponent component = entry.getValue();
                     android.view.View view = component.getView();
-                    view.setBackgroundColor(Component.COLOR_WHITE);
+                    view.setBackgroundColor(Component.COLOR_BLACK);
                     if(view instanceof android.widget.TextView){
                         android.widget.TextView textView = (android.widget.TextView) view;
-                        textView.setTextColor(Component.COLOR_BLACK);
+                        textView.setTextColor(Component.COLOR_WHITE);
                     }
                }
     }
@@ -71,10 +72,10 @@ public class DarkComponents extends AndroidNonvisibleComponent {
             for(Map.Entry<String, AndroidViewComponent> entry : components.entrySet()){
                     AndroidViewComponent component = entry.getValue();
                     android.view.View view = component.getView();
-                    view.setBackgroundColor(Component.COLOR_BLACK);
+                    view.setBackgroundColor(Component.COLOR_WHITE);
                     if(view instanceof android.widget.TextView){
                         android.widget.TextView textView = (android.widget.TextView) view;
-                        textView.setTextColor(Component.COLOR_WHITE);
+                        textView.setTextColor(Component.COLOR_BLACK);
                     }
             }
     }
