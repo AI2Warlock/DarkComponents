@@ -40,15 +40,15 @@ public class DarkComponents extends AndroidNonvisibleComponent {
     }
 
     @SimpleFunction(description = "Sets components to light mode")
-    public void SetComponentLightMode(){         
-            Map<String, AndroidViewComponent> components;
-            if (form instanceof ReplForm) {
-               components = mapComponentsRepl();
-            } else {
-               components = mapComponents();
-            }
+    public void SetComponentLightMode() throws NoSuchFieldException, IllegalAccessException {         
+               Map<String, AndroidViewComponent> components;
+               if (form instanceof ReplForm) {
+                 components = mapComponentsRepl();
+               } else {
+                 components = mapComponents();
+               }
 
-            for(Map.Entry<String, AndroidViewComponent> entry : components.entrySet()){
+               for(Map.Entry<String, AndroidViewComponent> entry : components.entrySet()){
                     AndroidViewComponent component = entry.getValue();
                     android.view.View view = component.getView();
                     view.setBackgroundColor(Component.COLOR_WHITE);
@@ -56,11 +56,11 @@ public class DarkComponents extends AndroidNonvisibleComponent {
                         android.widget.TextView textView = (android.widget.TextView) view;
                         textView.setTextColor(Component.COLOR_BLACK);
                     }
-            }
+               }
     }
 
     @SimpleFunction(description = "Sets components to dark mode")
-    public void SetComponentDarkMode(){         
+    public void SetComponentDarkMode() throws NoSuchFieldException, IllegalAccessException{         
             Map<String, AndroidViewComponent> components;
             if (form instanceof ReplForm) {
                components = mapComponentsRepl();
