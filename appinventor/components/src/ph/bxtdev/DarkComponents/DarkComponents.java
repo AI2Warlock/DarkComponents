@@ -11,10 +11,12 @@ import gnu.mapping.SimpleSymbol;
 import gnu.mapping.Location;
 import gnu.mapping.LocationEnumeration;
 import java.lang.reflect.Field;
+import java.util.HashMap;
+import java.util.Map;
 
 @DesignerComponent(
         version = 1,
-        description = "",
+        description = "Set components to light/dark mode without adjusting view.",
         category = ComponentCategory.EXTENSION,
         nonVisible = true,
         iconName = "aiwebres/icon.png")
